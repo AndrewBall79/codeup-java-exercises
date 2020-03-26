@@ -29,56 +29,56 @@ public class Practice {
         double cessna172Endurance;
         double piperEndurance;
 
-        aircraft cessna172 = new aircraft();    //creates object of class aircraft
-
-        cessna172.passengers = 4;
-        cessna172.cruiseSpeed = 140;
-        cessna172.fuelCapacity = 56.5;
-        cessna172.fuelBurnRate = 9.5;
-
-        System.out.println("Cessna 172");
+        aircraft cessna172 = new aircraft(4, 140, 56.5, 9.5);    //creates object of class aircraft
+        cessna172.captain = "Stevo";
+        cessna172.plateNumber = "ev5768";
         cessna172.calculateEndurance();
-
-
+        System.out.println("For Cessna 172 to fly for 2.5 hours, it takes: " + cessna172.fuelNeeded(2.5)+ " gallons of fuel.\n");
+        System.out.println("Cessna 172 Endurance is \n"+ cessna172.calculateEndurance());
 //        cessna172Endurance = cessna172.fuelCapacity / cessna172.fuelBurnRate;
-//        System.out.println("Cessna 172 Cruise Speed: "+ cessna172.cruiseSpeed); //
-//        System.out.println("Cessna 172 Fuel Burn Rate: " + cessna172.fuelBurnRate + " GPH");
+//        System.out.println("Cessna 172 Cruise Speed: "+ cessna172.cruiseSpeed +"\n"); //
+//        System.out.println("Cessna 172 Fuel Burn Rate: " + cessna172.fuelBurnRate + " GPH \n");
 //        System.out.printf("A Cessna 172 can stay aloft for %.3f hours \n", cessna172Endurance);
-
-        aircraft piperSaratoga = new aircraft(); //creates object contains all class variables
-
-        piperSaratoga.passengers = 6;
-        piperSaratoga.cruiseSpeed = 201;
-        piperSaratoga.fuelCapacity = 102.5;
-        piperSaratoga.fuelBurnRate = 20.5;
-
-        System.out.println("Piper Saratoga");
-        piperSaratoga.calculateEndurance();
+        aircraft piperSaratoga = new aircraft(6, 201, 102.5, 20.5); //creates object contains all class variables
+        double enduranceSaratoga = piperSaratoga.calculateEndurance();
+        System.out.println("For Piper Saratoga to fly for 4.2 hours, it takes: " + piperSaratoga.fuelNeeded(4.2)+ " gallons of fuel.\n");
+        System.out.println("Piper Saratoga Endurance is "+ enduranceSaratoga +"\n");
 
 
-//        System.out.println("Piper Saratoga Cruise Speed: "+ cessna172.cruiseSpeed + " MPH"); //
+//        System.out.println("Piper Saratoga Cruise Speed: "+ piperSaratoga.cruiseSpeed + " MPH"); //
 //        piperEndurance = piperSaratoga.fuelCapacity / piperSaratoga.fuelBurnRate;
 //        System.out.println("A piper Saratoga can stay aloft for " + piperEndurance + " hours");
 
-        aircraft g4 = new aircraft();
-
-
-
-
+//        aircraft g4 = new aircraft();
 
     }
 }
 
 class aircraft {
+    String captain;
     int passengers;       //number of people
     int cruiseSpeed;      //mph
     double fuelCapacity;  //gallons
     double fuelBurnRate;  //gallons per hour
+    String plateNumber;
+
+    aircraft(int p, int c, double fc, double fbr){
+        passengers = p;
+        cruiseSpeed = c;
+        fuelCapacity = fc;
+        fuelBurnRate = fbr;
+    }
+
 
     // method to calculate aircraft endurance
-    void calculateEndurance(){
+    double calculateEndurance() {
         double endurance;
         endurance = fuelCapacity / fuelBurnRate;
-        System.out.println("The endurance is " + endurance + " hours");
+        return endurance;
+    }
+
+    double fuelNeeded(double time ){
+        return fuelBurnRate * time;
     }
 }
+
