@@ -15,7 +15,7 @@ public class ControlFlowExercises {
         do {
             System.out.println(p);
             p += 2;
-        }while(p <= 100);
+        } while (p <= 100);
 
         int a = 100;
 //        do{
@@ -67,7 +67,6 @@ public class ControlFlowExercises {
 //        userNumber.
 
 
-
 //        do{
 //            System.out.println("Please enter a number between 1-100");
 //            int userNumber = input.nextInt();
@@ -90,32 +89,33 @@ public class ControlFlowExercises {
 //        if(!userResponse.equalsIgnoreCase("y"));
 //
 //        }
+//    }
+        boolean gradeContinue = true;
+        do {
+            System.out.println("Please enter a number grade");
+            int numericGrade = input.nextInt();
+
+            if (numericGrade >= 88) {
+                System.out.println("A");
+            } else if (numericGrade >= 80) {
+                System.out.println("B");
+            } else if (numericGrade >= 67) {
+                System.out.println("C");
+            } else if (numericGrade >= 60) {
+                System.out.println("D");
+            } else {
+                System.out.println("F");
+            }
+
+            System.out.println("Would you like to enter a new grade? (y/n)");
+            String userResponse = input.next();
+
+            if (!userResponse.equalsIgnoreCase("y")) {
+                gradeContinue = false;
+            }
+
+        } while (gradeContinue);
     }
-//            boolean gradeContinue = true;
-//        do{
-//            System.out.println("Please enter a number grade");
-//            int numericGrade = input.nextInt();
-//
-//            if(numericGrade >= 88){
-//                System.out.println("A");
-//            } else if ( numericGrade >= 80){
-//                System.out.println("B");
-//            } else if (numericGrade >= 67){
-//                System.out.println("C");
-//            } else if (numericGrade >= 60){
-//                System.out.println("D");
-//            } else {
-//                System.out.println("F");
-//            }
-//
-//            System.out.println("Would you like to enter a new grade? (y/n)");
-//            String userResponse = input.next();
-//
-//            if(!userResponse.equalsIgnoreCase("y")){
-//                gradeContinue = false;
-//            }
-//
-//        }while (gradeContinue);
 }
 
 

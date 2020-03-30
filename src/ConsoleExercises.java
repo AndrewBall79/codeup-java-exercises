@@ -39,5 +39,16 @@ public class ConsoleExercises {
 //        scanner.useDelimiter("\n");
 
 
+        Scanner areaScanner = new Scanner(System.in);
+        System.out.print("Enter the length of the room: ");
+        int length = areaScanner.nextInt();
+        System.out.print("Enter the width of the room: ");
+        int width = areaScanner.nextInt();
+        int area = length*width;
+        System.out.println("The area of the room is: "+ area +" feet squared");
+        int perimiter = (2*length)+(2*width);
+        System.out.println("The perimiter of the room is: "+ perimiter +" feet");
+
+
     }
 }

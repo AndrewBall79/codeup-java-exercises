@@ -1,5 +1,17 @@
 public class Practice {
     public static void main(String[] args) {
+
+//        String str1 = "Apples";
+//        String str2 = "Oranges";
+//        String str3 = "Apples";
+//
+//        System.out.println(str1);
+//        System.out.println(str2);
+//        System.out.println(str3);
+//        if(str1.compareTo(str2) > 0) System.out.println("str1 comes after str2");
+//        if(str1.compareTo(str2) < 0) System.out.println("str1 comes before str2");
+//        if(str1.compareTo(str3) == 0) System.out.println("str1 is equal to str2");
+
 //        int num1 = 7;
 //        int num2 = 78;
 //
