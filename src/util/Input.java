@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Input {
 
         private Scanner scanner = new Scanner(System.in);
-        String getString(){
+        public String getString(String s){
             System.out.println("Enter something: ");
             String userInput = scanner.next();
             System.out.println("You entered: --> \"" + userInput + "\" <--");
@@ -18,7 +18,7 @@ public class Input {
             System.out.println(confirmation);
             return confirmation;
         }
-        int getInt ( int min, int max){
+        public int getInt(int min, int max, String s){
             System.out.println("Enter a Number Between 1 and 10");
             boolean doAgain = true;
             int num = 0;
