@@ -4,14 +4,27 @@ import java.util.Scanner;
 
 public class Input {
 
-        private Scanner scanner = new Scanner(System.in);
-        public String getString(String s){
-            System.out.println("Enter something: ");
+        private static Scanner scanner = new Scanner(System.in);
+
+    public static void setScanner(Scanner scanner) {
+    }
+
+    public static String getString() {
+    return "";
+    }
+
+    public static String getString(String s){
+//            System.out.println("Enter something: ");
             String userInput = scanner.next();
             System.out.println("You entered: --> \"" + userInput + "\" <--");
             return userInput;
         }
-        boolean yesNo () {
+
+    public static boolean yesNo(String s) {
+        return true;
+    }
+
+    boolean yesNo () {
             System.out.println("Enter (y/N): ");
             String userYn = scanner.next();
             boolean confirmation = userYn.equalsIgnoreCase("y");
