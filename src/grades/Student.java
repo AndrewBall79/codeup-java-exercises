@@ -20,7 +20,7 @@ public class Student {
     // adds the given grade to the grades property
     public void addGrade(int grade) {
         grades.add(grade);
-//        System.out.println(name + " Just scored a " + grade);
+        System.out.println(name + " Just scored a " + grade);
     }
 
     // returns the average of the students grades

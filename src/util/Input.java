@@ -9,11 +9,8 @@ public class Input {
     public static void setScanner(Scanner scanner) {
     }
 
-    public static String getString() {
-    return "";
-    }
 
-    public static String getString(String s){
+    public static String getString(String prompt){
             System.out.print("Enter something: ");
             String userInput = scanner.next();
             System.out.println("You entered: --> \"" + userInput + "\" <--");
@@ -32,14 +29,14 @@ public class Input {
             return confirmation;
         }
         public static int getInt(int min, int max, String s){
+            System.out.println("Enter a Number Between 1 and 10");
             boolean doAgain = true;
             int num = 0;
-            System.out.println("Enter a Number Between 1 and 10");
             do {
                 try {
                     num = Integer.parseInt(getString(s));
                     scanner.nextLine();
-                    if (num <= min || num >= max) {
+                    if (num < min || num > max) {
                         System.out.printf("\nThe integer %d is out of range\n", num);
                         System.out.printf("Enter an integer between %d and %d ", min, max);
 
@@ -47,7 +44,9 @@ public class Input {
                         doAgain = false;
                     }
                 } catch (InputMismatchException ime) {
+
                     System.out.println("That is not an integer.");
+                    System.out.printf("Enter an integer between %d and %d ", min, max);
                     scanner.nextLine();
                     num = 0;
 
@@ -88,6 +87,18 @@ public static double getDouble(double min, double max){
 //        System.out.println("Enter a Decimal Number: ");
 //        double num = scanner.nextDouble();
 //        return num;
+//    }
+//    public int getBinary(String prompt){
+//
+//        do {
+//            if (prompt != null){
+//        }
+//        try{
+//            userInput = getString();
+//            num = Integer.valueOf(userInput, 2);
+//            validInput = true;
+//        }
+//
 //    }
 
 }
